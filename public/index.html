@@ -91,7 +91,12 @@ function ball_reset()
 		ball.x = ball_x_init;
 		ball.y = ball_y_init;
 
-		ball_x_dir = -ball_x_dir;
+		let angle = Phaser.Math.Between(-45, 45); // Ángulo en grados
+    	angle = Phaser.Math.DegToRad(angle); // Convertir a radianes
+
+
+    	ball_x_dir = Math.cos(angle) * (Math.random() < 0.5 ? -1 : 1);
+	    ball_y_dir = Math.sin(angle);
 }
 
 function update ()
@@ -99,8 +104,8 @@ function update ()
 		if(player_num == 0)
 				return;
 		if(player_num == 1){
-				ball.x += ball_x_dir;
-				ball.y += ball_y_dir;
+				ball.x += ball_x_dir * 5;
+				ball.y += ball_y_dir * 5;
 
 				if(ball.x > win_w)
 				{
