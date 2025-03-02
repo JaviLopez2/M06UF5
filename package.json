@@ -1,6 +1,13 @@
 {
+  "name": "pengti",
+  "version": "1.0.0",
+  "description": "WebSocket game server and client",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "node-static": "^0.7.11",
-    "ws": "^8.18.0"
+    "ws": "^8.5.0"
   }
 }
